@@ -27,9 +27,6 @@ LOCAL_CFLAGS := -DLOG_TAG=\"qdlights\"
 LOCAL_CLANG  := true
 LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
-LOCAL_VENDOR_MODULE := true
-ifneq (,$(filter tissot,$(TARGET_DEVICE)))
-    LOCAL_CFLAGS += -DWHITE_LED
-endif
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
