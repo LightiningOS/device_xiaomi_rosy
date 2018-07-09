@@ -78,7 +78,7 @@ persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
-ro.sf.lcd_density=480
+ro.sf.lcd_density=320
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -120,7 +120,7 @@ vendor.vidc.enc.disable_bframes=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.sys.fw.dex2oat_thread_count=4 \
+ro.sys.fw.dex2oat_thread_count=8 \
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Netmgrd
@@ -184,3 +184,10 @@ persist.sys.usb.config.extra=none
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
+
+# Dex2oat threads for faster app installation
+# Use all 8 Cores/Threads of our CPU
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.dex2oat-threads=8 \
+dalvik.vm.image-dex2oat-threads=8 \
+debug.generate-debug-info=false
