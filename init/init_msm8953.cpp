@@ -112,6 +112,16 @@ void vendor_load_properties()
     init_alarm_boot_properties();
     check_device();
 
+	// For GSI
+    property_override("ro.product.model", "Redmi 5[CR]");
+    property_override("ro.product.brand", "Xiaomi");
+    property_override("ro.product.manufacturer", "Xiaomi");
+    property_override("ro.product.name", "rosy");
+    property_override("ro.product.device", "rosy");
+    property_override("ro.build.product", "rosy");
+    property_override("ro.build.description", "rosy-user 7.1.2 N2G47H V9.5.11.0.NDAMIFA release-keys");
+    property_override("ro.build.fingerprint", "Xiaomi/rosy/rosy:7.1.2/N2G47H/V9.5.11.0.NDAMIFA:user/release-keys");
+	
     property_set("dalvik.vm.heapstartsize", heapstartsize);
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
     property_set("dalvik.vm.heapsize", heapsize);
