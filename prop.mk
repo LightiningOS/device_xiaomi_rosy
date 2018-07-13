@@ -80,6 +80,10 @@ ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
 ro.sf.lcd_density=320
 
+# Enable HW Keys (By default)
+PRODUCT_PROPERTY_OVERRIDES += \
+qemu.hw.mainkeys=1
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
@@ -101,6 +105,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 persist.gps.qc_nlp_in_use=1 \
 persist.loc.nlp_name=com.qualcomm.location \
 ro.gps.agps_provider=1
+
+# Google Assistant
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.opa.eligible_device=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
